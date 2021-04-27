@@ -127,8 +127,6 @@ x7=as.numeric(data3$district)
 x8=as.numeric(data3$year)
 x9=as.numeric(data3$month)
 
-
-#####method of moments with simulations######
 mm_sim = function(par,emp_mom)
 {
   nsim=50
