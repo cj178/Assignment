@@ -108,10 +108,9 @@ fd=lm(afd~tfd+cfd+ifd+bfd+hfd+wfd+factor(district),data=data55)
 printCoefmat(coeftest(wit, vcov = sandwich)[1:7,])
 
 
-
+####check result#####
 library(plm)
 formula = arrest~tenure+ptcrim+p50_inc+share_b+share_h+share_w
-#+factor(district)+year+month-1
 model1 = plm(formula, data=data3, model="within")
 model2 = plm(formula, data=Produc, model="between")
 model3 = plm(formula, data=data3, model="fd")
@@ -137,8 +136,7 @@ x8=as.numeric(data3$year)
 x9=as.numeric(data3$month)
 
 
-
-# method of moments with simulations here
+#####method of moments with simulations######
 mm_sim = function(par,emp_mom)
 {
   nsim=50
