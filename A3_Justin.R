@@ -108,14 +108,6 @@ fd=lm(afd~tfd+cfd+ifd+bfd+hfd+wfd+factor(district),data=data55)
 printCoefmat(coeftest(wit, vcov = sandwich)[1:7,])
 
 
-####check result#####
-library(plm)
-formula = arrest~tenure+ptcrim+p50_inc+share_b+share_h+share_w
-model1 = plm(formula, data=data3, model="within")
-model2 = plm(formula, data=Produc, model="between")
-model3 = plm(formula, data=data3, model="fd")
-
-
 
 ###### GMM #####
 library(moments)
